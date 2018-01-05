@@ -68,7 +68,10 @@ def anywhere(cmdtail):
     print(ser.readline())
     time.sleep(waitime)
 def playchess():
-
+    myu.uarminit()
+    for fieldid in range(0,9):
+        print("testing field %d" %fieldid)
+        myu.putchess(fieldid)
     for i in range(1,10):
         catchinit(1.5)
         uarmcatch()
@@ -79,7 +82,9 @@ def playchess():
 
 def run():
     myu.uarminit()
-    myu.putchess(0)
+    for fieldid in range(0,9):
+        print("testing field %d" %fieldid)
+        myu.putchess(fieldid)
     action = "aaa"
     id=1
     while action != "q":
@@ -113,7 +118,7 @@ def run():
         ser.write(cmd.encode())
         print(cmd)
         print(ser.readline())
-# run()
+#run()
 # i = 0
 # while i<10:
 #     i= i+1
