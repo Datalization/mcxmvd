@@ -12,7 +12,7 @@ print (ports)
 for p in ports:
     global ser
     print (p[1])
-    if ("SERIAL" in p[1])or("Serial" in p[1]):
+    if ("SERIAL" in p[1])or("Serial" in p[1])or("FT232R USB UART" in p[1]):
 	    ser = serial.Serial(port=p[0],baudrate=115200)
     else :
         # ser = serial.Serial(port="24",baudrate=115200)
