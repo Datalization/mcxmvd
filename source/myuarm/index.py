@@ -68,7 +68,6 @@ def anywhere(cmdtail):
     print(ser.readline())
     time.sleep(waitime)
 def playchess():
-
     for i in range(1,10):
         catchinit(1.5)
         uarmcatch()
@@ -76,6 +75,9 @@ def playchess():
         moveurm(i)
         uarmrelease()
     initzero()
+def addchange(add = 9):
+    addlist = [3,6,9,2,5,8,1,4,7,0]
+    moveurm(addlist[add])
 
 def run():
     myu.uarminit()
