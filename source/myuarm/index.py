@@ -12,7 +12,7 @@ print (ports)
 for p in ports:
     global ser
     print (p[1])
-    if ("SERIAL" in p[1])or("Serial" in p[1]):
+    if ("SERIAL" in p[1])or("Serial" in p[1])or("FT232R USB UART" in p[1]):
 	    ser = serial.Serial(port=p[0],baudrate=115200)
     else :
         # ser = serial.Serial(port="24",baudrate=115200)
@@ -68,6 +68,10 @@ def anywhere(cmdtail):
     print(ser.readline())
     time.sleep(waitime)
 def playchess():
+    myu.uarminit()
+    for fieldid in range(0,9):
+        print("testing field %d" %fieldid)
+        myu.putchess(fieldid)
     for i in range(1,10):
         catchinit(1.5)
         uarmcatch()
@@ -115,7 +119,7 @@ def run():
         ser.write(cmd.encode())
         print(cmd)
         print(ser.readline())
-# run()
+#run()
 # i = 0
 # while i<10:
 #     i= i+1
