@@ -23,7 +23,7 @@ mnist_train_lmdb
 mnist_test_lmdb
 ```
 # 训练
-##修改solver配置文件为CPU
+## 修改solver配置文件为CPU
 ```
 cd /opt/movidius/caffe/examples/mnist
 gedit lenet_solver.prototxt
