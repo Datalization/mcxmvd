@@ -1,4 +1,5 @@
 #下载数据集
+'''
 <p>
 
 cd /opt/movidius/caffe
@@ -7,6 +8,7 @@ cd data/mnist
 ./get_mnist.sh
 
 </p>
+'''
 
 ##大概下载15分钟
 
