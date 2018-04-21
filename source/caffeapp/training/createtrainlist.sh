@@ -1,5 +1,5 @@
 # /usr/bin/env sh
-DATA=images
+DATA=imgtrain
 echo "Create train.txt..."
 rm -rf ./train.txt
 find $DATA -name O*.*| cut -d '/' -f2 | sed "s/$/ 1/">>./train.txt
