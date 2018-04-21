@@ -1,5 +1,10 @@
 import cv2  
 import numpy as np  
-img=cv2.imread('zero.bmp')  
-GrayImage=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)  
-ret,bininvimg=cv2.threshold(GrayImage,127,255,cv2.THRESH_BINARY_INV)
+import time
+img = cv2.imread('zero.bmp',0)
+cv2.imshow('image',img)
+time.sleep(1)
+img = ~img
+time.sleep(1)
+cv2.imshow('image',img)
+cv2.imwrite('zeroinv.bmp',img)
