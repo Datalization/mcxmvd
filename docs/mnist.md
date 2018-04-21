@@ -6,13 +6,14 @@ ls
 cd data/mnist
 ./get_mnist.sh
 ```
-## 大概下载15分钟
-#将数据集转化为Caffe支持的lmdb格式
+大概下载15分钟
+
+# 将数据集转化为Caffe支持的lmdb格式
 ```
 cd /opt/movidius/caffe
 ./examples/mnist/create_mnist.sh 
 ```
-## 查看生成的lmdb
+查看生成的lmdb
 ```
 cd /opt/movidius/caffe/examples/mnist
 ls
@@ -55,7 +56,7 @@ net: "examples/mnist/lenet_train_test.prototxt"
   data_param {
     source: "examples/mnist/mnist_test_lmdb"
 ```
-## 运行训练
+## 训练实施
 ```
 cd /opt/movidius/caffe
 ./examples/mnist/train_lenet.sh 
@@ -74,3 +75,19 @@ I0421 19:23:06.838296  3242 solver.cpp:425]     Test net output #1: loss = 0.026
 cd /opt/movidius/caffe/examples/mnist
 ls -al lenet_iter_10000.caffemodel
 ```
+# 测试
+```
+cd /opt/movidius/caffe/examples/mnist
+gedit test_lenet.sh
+```
+写入以下内容
+```
+#!/usr/bin/env sh
+set -e
+./build/tools/caffe test -model=examples/mnist/lenet_train_test.prototxt -weights=examples/mnist/lenet_iter_10000.caffemodel
+```
+
+
+
+
+
