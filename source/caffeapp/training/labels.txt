@@ -1,4 +1,4 @@
-zeronull
+begin
 O
 X
 end
