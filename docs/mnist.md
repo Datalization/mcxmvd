@@ -1,17 +1,17 @@
-#下载数据集
+# 下载数据集
 ```
 cd /opt/movidius/caffe
 ls
 cd data/mnist
 ./get_mnist.sh
 ```
-##大概下载15分钟
+## 大概下载15分钟
 #将数据集转化为Caffe支持的lmdb格式
 ```
 cd /opt/movidius/caffe
 ./examples/mnist/create_mnist.sh 
 ```
-##查看生成的lmdb
+## 查看生成的lmdb
 ```
 cd /opt/movidius/caffe/examples/mnist
 ls
@@ -28,12 +28,12 @@ cd /opt/movidius/caffe/examples/mnist
 gedit lenet_solver.prototxt
 ```
 修改最后一行 solver_mode 为CPU
-##查看lenet_solver.prototxt
+## 查看lenet_solver.prototxt
 可以发现这里面注明了训练和测试用的net文件描述
 ```
 net: "examples/mnist/lenet_train_test.prototxt"
 ```
-##查看lenet_train_test.prototxt
+## 查看lenet_train_test.prototxt
 可以发现训练阶段用的lmdb
 ```
     phase: TRAIN
@@ -68,7 +68,7 @@ I0421 19:23:00.934972  3242 solver.cpp:358] Iteration 10000, Testing net (#0)
 I0421 19:23:06.838151  3242 solver.cpp:425]     Test net output #0: accuracy = 0.9913
 I0421 19:23:06.838296  3242 solver.cpp:425]     Test net output #1: loss = 0.0266154 (* 1 = 0.0266154 loss)
 ```
-##检查训练结果
+## 检查训练结果
 ```
 cd /opt/movidius/caffe/examples/mnist
 ls -al lenet_iter_10000.caffemodel
