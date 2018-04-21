@@ -86,6 +86,19 @@ gedit test_lenet.sh
 set -e
 ./build/tools/caffe test -model=examples/mnist/lenet_train_test.prototxt -weights=examples/mnist/lenet_iter_10000.caffemodel
 ```
+执行
+```
+cd /opt/movidius/caffe
+./examples/mnist/test_lenet.sh
+```
+结果
+```
+I0421 20:56:50.197283  2413 caffe.cpp:308] Batch 49, accuracy = 1
+I0421 20:56:50.197407  2413 caffe.cpp:308] Batch 49, loss = 0.00594101
+I0421 20:56:50.197459  2413 caffe.cpp:313] Loss: 0.038515
+I0421 20:56:50.197520  2413 caffe.cpp:325] accuracy = 0.9878
+I0421 20:56:50.197580  2413 caffe.cpp:325] loss = 0.038515 (* 1 = 0.038515 loss)
+```
 
 
 
