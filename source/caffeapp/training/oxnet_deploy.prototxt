@@ -1,37 +1,9 @@
 name: "LeNet"
 layer {
-  name: "mnist"
-  type: "Data"
+  name: "data"
+  type: "Input"
   top: "data"
-  top: "label"
-  include {
-    phase: TRAIN
-  }
-  transform_param {
-    scale: 0.00390625
-  }
-  data_param {
-    source: "oxlmdb"
-    batch_size: 4
-    backend: LMDB
-  }
-}
-layer {
-  name: "mnist"
-  type: "Data"
-  top: "data"
-  top: "label"
-  include {
-    phase: TEST
-  }
-  transform_param {
-    scale: 0.00390625
-  }
-  data_param {
-    source: "oxlmdb_test"
-    batch_size: 8
-    backend: LMDB
-  }
+  input_param { shape: { dim: 1 dim: 3 dim: 28 dim: 28 } }
 }
 layer {
   name: "conv1"
@@ -62,7 +34,7 @@ layer {
   bottom: "conv1"
   top: "pool1"
   pooling_param {
-    pool: MAX
+    pool:MAX
     kernel_size: 2
     stride: 2
   }
@@ -102,12 +74,12 @@ layer {
   }
 }
 layer {
-  name: "ip1"
+  name: "ip1_xkn"
   type: "InnerProduct"
   bottom: "pool2"
   top: "ip1"
   param {
-    lr_mult: 1
+    lr_mult: 2
   }
   param {
     lr_mult: 2
@@ -150,19 +122,8 @@ layer {
   }
 }
 layer {
-  name: "accuracy"
-  type: "Accuracy"
+  name: "prob"
+  type: "Softmax"
   bottom: "ip2"
-  bottom: "label"
-  top: "accuracy"
-  include {
-    phase: TEST
-  }
-}
-layer {
-  name: "loss"
-  type: "SoftmaxWithLoss"
-  bottom: "ip2"
-  bottom: "label"
-  top: "loss"
+  top: "prob"
 }

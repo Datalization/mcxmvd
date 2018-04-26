@@ -4,7 +4,7 @@ import time
 import myuapi as myu
 
 print ('hello')
-movelist = ['G0 X100 Y100 Z100 F100\n','G0 X65 Y132 Z80 F100\n','G0 X00 Y132 Z80 F100\n','G0 X-55 Y146 Z80 F100\n','G0 X73 Y200 Z80 F100\n','G0 X10 Y200 Z80 F100\n','G0 X-50 Y214 Z80 F100\n','G0 X80 Y268 Z80 F100\n','G0 X10 Y268 Z80 F100\n','G0 X-45 Y282 Z80 F100\n']
+movelist = ['G0 X43 Y88 Z87 F100\n','G0 X08 Y84 Z87 F100\n','G0 X-32 Y100 Z80 F100\n','G0 X63 Y163 Z83 F100\n','G0 X10 Y150 Z83 F100\n','G0 X-38 Y165 Z80 F100\n','G0 X72 Y235 Z85 F100\n','G0 X20 Y245 Z85 F100\n','G0 X-43 Y250 Z80 F100\n']
 ports = list(serial.tools.list_ports.comports())
 
 print (ports)
