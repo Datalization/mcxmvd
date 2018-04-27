@@ -102,8 +102,11 @@ I0421 20:56:50.197580  2413 caffe.cpp:325] loss = 0.038515 (* 1 = 0.038515 loss)
 50批次测试结果，总正确率0.9878
 
 # 单个图片分类
+文档参见
+https://blog.csdn.net/dcrmg/article/details/73554927
 
-
+脚本参见
+../caffapp/mnist
 
 
 
